@@ -1,0 +1,38 @@
+<mat-card-content>
+  <mat-card-title>Acerca de mi</mat-card-title>
+  <span class="m-t-20"> &nbsp; </span>
+  <div class="m-t-20">
+    <span class="text-muted"><i class="fa fa-calendar m-r-10"></i>Fecha Nacimiento: &nbsp;</span>
+    <span>{{this?.dataPersona?.fechaNacimiento | date: 'dd/MM/yyyy'}}</span>
+  </div>
+  <div class="m-t-20">
+    <span class="text-muted"><i class="fa fa-phone m-r-10"></i>Nro Celular: &nbsp;</span>
+    <span>{{this?.dataPersona?.CELULAR}}</span>
+  </div>
+  <div class="m-t-20">
+    <span class="text-muted"><i class="fa fa-cloud m-r-10"></i>Dirección: &nbsp;</span>
+    <span>{{this?.dataPersona?.DIRECCION_PERSONA}}</span>
+  </div>
+  <div class="m-t-20">
+    <span class="text-muted"><i class="fa fa-envelope-o m-r-10"></i>email: &nbsp;</span>
+    <span>{{this?.dataPersona?.CORREO}}</span>
+  </div>
+</mat-card-content>
+<div fxLayout="row wrap" class="text-center bg-light border-top">
+  <div fxFlex.gt-xs="33.33" fxFlex="33.33" class="p-t-10 p-b-10">
+    <a href="javascript:void(0)" class="link">
+      <i class="fa fa-instagram m-r-10 m-t-0 m-b-5"></i>
+    </a>
+  </div>
+  <div fxFlex.gt-xs="33.33" fxFlex="33.33" class="p-t-10 p-b-10">
+    <a href="javascript:void(0)" class="link">
+      <i class="fa fa-linkedin m-r-10 m-t-0 m-b-5"></i>
+    </a>
+  </div>
+  <div fxFlex.gt-xs="33.33" fxFlex="33.33" class="p-t-10 p-b-10">
+    <a href="javascript:void(0)" class="link">
+      <i class="fa fa-facebook m-r-10 m-t-0 m-b-5"></i>
+      <!-- {{ contact.contactfacebook }} -->
+    </a>
+  </div>
+</div>

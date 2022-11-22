@@ -1,0 +1,71 @@
+<!--  -->
+<div class="table-responsive">
+  <table mat-table [dataSource]="this.listCursoProgramado" class="table ticket-list">
+    <ng-container matColumnDef="sede">
+      <th mat-header-cell *matHeaderCellDef>Sede</th>
+      <td mat-cell *matCellDef="let element">{{ element.SedeInstitucion }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="clase">
+      <th mat-header-cell *matHeaderCellDef>Clase</th>
+      <td mat-cell *matCellDef="let element">{{ element.NombreClase }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="turno">
+      <th mat-header-cell *matHeaderCellDef>Turno</th>
+      <td mat-cell *matCellDef="let element">{{ element.Turno }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="seccion">
+      <th mat-header-cell *matHeaderCellDef>Sección</th>
+      <td mat-cell *matCellDef="let element">{{ element.Seccion }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="docente">
+      <th mat-header-cell *matHeaderCellDef>Docente</th>
+      <td mat-cell *matCellDef="let element">{{ element.Docente }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="aula">
+      <th mat-header-cell *matHeaderCellDef>Aula</th>
+      <td mat-cell *matCellDef="let element">{{ element.Aulas }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="horario">
+      <th mat-header-cell *matHeaderCellDef>Horario</th>
+      <td mat-cell *matCellDef="let element">{{ element.Horarios }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="vacante">
+      <th mat-header-cell *matHeaderCellDef>Nro. Vacentes Disponibles</th>
+      <td mat-cell *matCellDef="let element">{{ element.VacantesDisp }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Selecione</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-radio-group [(ngModel)]="selectedRow" (change)="getCurso()">
+          <mat-radio-button [value]="element"></mat-radio-button>
+        </mat-radio-group>
+
+        <!-- <mat-radio-button class="example-radio-button" [value]="element.Row"> </mat-radio-button> -->
+
+        <!-- <button
+          mat-icon-button
+          matTooltip="Clic aquí para seleccionar el curso"
+          color="primary"
+          (click)="getCurso(element.id)"
+        >
+          <!-- <mat-icon class="text-info">add_task</mat-icon> -->
+        <!-- Seleccione
+        </button> -->
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="9">No se encontraron registros</td>
+    </tr>
+  </table>
+</div>

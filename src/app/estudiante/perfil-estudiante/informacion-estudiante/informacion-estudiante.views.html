@@ -1,0 +1,112 @@
+<mat-card-content>
+  <mat-card-title>Información de Estudiante</mat-card-title>
+  <!-- ============================================================== -->
+  <!-- column -->
+  <!-- ============================================================== -->
+  <form class="basic-form">
+    <div fxLayout="row wrap">
+      <!-- column -->
+      <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Codigo"
+            value="{{this?.data?.codigoEstudiante}}"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+      <!-- column -->
+      <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+        <mat-form-field>
+          <input
+            matInput
+            readonly="true"
+            placeholder="Periodo Lectivo de Ingreso"
+            value="{{this?.data?.EstudianteInstitucionPerfilDtos[0]?.xCodigoPeriodoLectivoIngreso}}"
+          />
+        </mat-form-field>
+      </div>
+      <!-- column -->
+      <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Situacion"
+            value="{{this?.data?.EstudianteInstitucionPerfilDtos[0]?.xTextoSituacion}}"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- column -->
+      <div fxFlex.gt-sm="100" fxFlex="100" class="p-10">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Programa de Estudio"
+            value="{{this?.data?.NombreCarrera}}"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- column -->
+      <div fxFlex.gt-sm="100" fxFlex="100" class="p-10">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Plan de Estudios"
+            value="{{this?.data?.NombrePlanEstudio}}"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- column -->
+      <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Modalidad"
+            value="{{this?.data?.EstudianteInstitucionPerfilDtos[0]?.xTextoModalidad}}"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+      <!-- column -->
+      <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Periodo Academico Actual"
+            value="{{this?.data?.EstudianteInstitucionPerfilDtos[0]?.xPeriodoAcademicoActual}}"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+      <!-- column -->
+      <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Sede"
+            value="{{this?.data?.EstudianteInstitucionPerfilDtos[0]?.xNombreSede}}"
+            readonly="true"
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- column
+      <div fxFlex.gt-sm="100" fxFlex="100">
+        <mat-form-field>
+          <mat-select placeholder="Select">
+            <mat-option value="option">Option</mat-option>
+            <mat-option value="option">Option2</mat-option>
+            <mat-option value="option">Option3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+    </div>
+  </form>
+</mat-card-content>

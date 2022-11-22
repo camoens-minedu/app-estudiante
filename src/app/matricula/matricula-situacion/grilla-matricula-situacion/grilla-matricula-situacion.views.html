@@ -1,0 +1,76 @@
+<div class="table-responsive">
+  <table mat-table [dataSource]="this.listaMatriculaRegistrada" class="table ticket-list">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let element">{{ element.ID_MATRICULA_ESTUDIANTE }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="codSemestre">
+      <th mat-header-cell *matHeaderCellDef>Semestre</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element?.periodoAcademico?.NOMBRE_PERIODO_ACADEMICO }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaMatricula">
+      <th mat-header-cell *matHeaderCellDef>Fecha Matricula</th>
+      <td mat-cell *matCellDef="let element" class="text-center">
+        {{ element.FECHA_MATRICULA | date: 'dd/MM/yyyy'}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nroCursoMatriculado">
+      <th mat-header-cell *matHeaderCellDef>Nro Cursos Matriculados</th>
+      <td mat-cell *matCellDef="let element" class="text-center">
+        <!-- {{ element.nroCursoMatriculado }} -->
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nroCreditoMatriculado">
+      <th mat-header-cell *matHeaderCellDef>Nro Creditos Matriculados</th>
+      <td mat-cell *matCellDef="let element" class="text-center">
+        <!-- {{ element.nroCreditoMatriculado }} -->
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nroCursoAprobado">
+      <th mat-header-cell *matHeaderCellDef>Nro Cursos Aprobados</th>
+      <td mat-cell *matCellDef="let element" class="text-center">
+        <!-- {{ element.nroCursoAprobado }} -->
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nroCreditoAprobado">
+      <th mat-header-cell *matHeaderCellDef>Nro Créditos Aprobados</th>
+      <td mat-cell *matCellDef="let element" class="text-center"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="EsMatriculado">
+      <th mat-header-cell *matHeaderCellDef>¿Aprobado?</th>
+      <td mat-cell *matCellDef="let element" class="text-center">
+        <!-- <span class="label label-info ng-star-inserted" *ngIf="element.EsMatriculado">SI</span>
+        <span class="label label-warning ng-star-inserted" *ngIf="!element.EsMatriculado">NO</span> -->
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Ver Ficha</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-icon-button
+          matTooltip="Clic aquí para ver Ficha"
+          color="primary"
+          (click)="getFicha(element.ID_MATRICULA_ESTUDIANTE)"
+        >
+          <mat-icon class="text-info">visibility</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="9">No se encontraron registros</td>
+    </tr>
+  </table>
+</div>

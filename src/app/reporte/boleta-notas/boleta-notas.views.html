@@ -1,0 +1,17 @@
+<app-filtro-semestre-main
+  [setValue]="this.comboSemestre"
+  (onSelect)="this.onSelectSemestre($event)"
+></app-filtro-semestre-main>
+
+<div fxLayout="row wrap">
+  <div fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <app-report-ficha-matricula
+          [setPdf]="this.pdfSrc"
+          *ngIf="this.pdfSrc"
+        ></app-report-ficha-matricula>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

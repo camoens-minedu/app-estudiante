@@ -1,0 +1,12 @@
+<!-- class="mat-typography" -->
+<h2 mat-dialog-title>Ficha de Matricula</h2>
+<mat-dialog-content>
+  <div style="width: 900px !important">
+    <app-report-ficha-matricula [setPdf]="this.pdfSrc" *ngIf="this.pdfSrc">
+    </app-report-ficha-matricula>
+  </div>
+</mat-dialog-content>
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()" mat-flat-button>Cancelar</button>
+</div>

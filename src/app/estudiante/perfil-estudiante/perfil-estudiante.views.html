@@ -1,0 +1,51 @@
+<!-- ============================================================== -->
+<!-- Card Grid-->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Perfil de Estudiante</mat-card-title>
+
+        <br />
+        <app-foto-perfil
+          [nombrecarrera]="this?.data?.PersonaInstitucionDto?.NombreCarrera"
+          *ngIf="this.data"
+        ></app-foto-perfil>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div fxLayout="row wrap" *ngIf="this.data">
+  <div fxFlex="100">
+    <mat-card>
+      <div fxLayout="row wrap">
+        <div fxFlex.gt-lg="25" fxFlex.gt-md="40" fxFlex.gt-xs="100" fxFlex="100">
+          <app-acerca-estudiante
+            [dataPersona]="this?.data?.PersonaInstitucionDto"
+          ></app-acerca-estudiante>
+        </div>
+        <!-- Column-->
+        <div fxFlex.gt-lg="75" fxFlex.gt-md="60" fxFlex.gt-xs="100" fxFlex="100">
+          <app-informacion-estudiante
+            [data]="this?.data?.PersonaInstitucionDto"
+          ></app-informacion-estudiante>
+        </div>
+      </div>
+      <!-- <mat-tab-group>
+        <mat-tab label="Estudiante">
+          <mat-card-content>
+
+          </mat-card-content>
+        </mat-tab>
+        <mat-tab label="Apoderado">
+          <mat-card-content> Mi table </mat-card-content>
+        </mat-tab>
+        <mat-tab label="Configuraciones">
+          <mat-card-content> Mi table </mat-card-content>
+        </mat-tab>
+      </mat-tab-group> -->
+    </mat-card>
+  </div>
+</div>

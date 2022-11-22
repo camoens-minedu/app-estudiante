@@ -1,0 +1,16 @@
+{
+    "angular.enable-strict-mode-prompt": false,
+    "plsql-language.connections": [
+        {
+            "database": "10.50.74.11:1521/DEVELOPER",
+            "username": "SISCAT",
+            "password": "D3v3l0p3r$",
+            "schema": "SISCAT",
+            "active": true,
+            "hidden": false,
+            "ID": 4,
+            "name": "SISCAT@10.50.74.11:1521/DEVELOPER"
+        }
+    ],
+    "plsql-language.connection.activeInfos": "SISCAT/D3v3l0p3r$@10.50.74.11:1521/DEVELOPER"
+}

@@ -1,0 +1,39 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <div fxLayout="row wrap" class="align-items-center">
+          <div fxFlex.gt-md="25" fxFlex.gt-lg="25" fxFlex="100">
+            <mat-form-field>
+              <mat-select
+                placeholder="Seleccione un semestre"
+                [(ngModel)]="this.idEstudianteSelect"
+              >
+                <mat-option
+                  *ngFor="let item of comboSemestre"
+                  [value]="item?.ID_MATRICULA_ESTUDIANTE"
+                >
+                  {{item?.periodoAcademico?.NOMBRE_PERIODO_ACADEMICO}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <!-- <mat-form-field>
+
+              <mat-select placeholder="Seleccione un semestre">
+                <mat-option value="1">2020-I</mat-option>
+                <mat-option value="2">2021-II</mat-option>
+                <mat-option value="3">2022-I</mat-option>
+              </mat-select>
+            </mat-form-field> -->
+          </div>
+          <div fxFlex.gt-md="75" class="p-20">
+            <button mat-raised-button color="primary" (click)="this.onSelectSemestre()">
+              Buscar
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

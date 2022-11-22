@@ -1,0 +1,204 @@
+<!-- ============================================================== -->
+<!-- Card Grid-->
+<!-- ============================================================== -->
+
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Datos Personales</mat-card-title>
+        <!-- <mat-card-subtitle
+          >use this class <code>.row</code> to the fxLayout="row" and <code>p-10</code> to the
+          fxFlex div</mat-card-subtitle
+        > -->
+        <!-- ============================================================== -->
+        <!-- column -->
+        <!-- ============================================================== -->
+        <!-- <form class="basic-form" [formGroup]="this.form" (ngSubmit)="this.send()"> -->
+
+        <form class="basic-form" [formGroup]="this.form" (ngSubmit)="this.send()">
+          <div fxLayout="row wrap" fxFlexAlign="center" class="row">
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <mat-select
+                  formControlName="idTipoDocumento"
+                  placeholder="Seleccione Tipo Doc"
+                  [value]="this.personaEstudiante?.Persona?.ID_TIPO_DOCUMENTO"
+                  disabled="true"
+                >
+                  <mat-option
+                    *ngFor="let item of personaEstudiante.tipoDocumento"
+                    [value]="item.ID_ENUMERADO"
+                  >
+                    {{item.VALOR_ENUMERADO}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Nro Documento"
+                  formControlName="nroDocumento"
+                  readonly="true"
+                />
+                <!-- <mat-error *ngIf="nameErrors">{{ nameErrors }}</mat-error> -->
+              </mat-form-field>
+              <!-- [value]="personaDto.NUMERO_DOCUMENTO_PERSONA" -->
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <mat-select
+                  formControlName="idSexo"
+                  placeholder="Seleccione Sexo"
+                  disabled="true"
+                  [value]="this.personaEstudiante?.Persona?.SEXO_PERSONA"
+                >
+                  <mat-option
+                    *ngFor="let item of personaEstudiante.sexo"
+                    [value]="item.ID_ENUMERADO"
+                  >
+                    {{item.VALOR_ENUMERADO}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Apellido Paterno"
+                  formControlName="apellidoPaterno"
+                  readonly="true"
+                />
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Apellido Materno"
+                  formControlName="apellidoMaterno"
+                  readonly="true"
+                />
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Nombres" formControlName="nombre" readonly="true" />
+              </mat-form-field>
+            </div>
+
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  formControlName="fechaNac"
+                  disabled="true"
+                  readonly="true"
+                />
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <mat-select
+                  formControlName="lengua"
+                  placeholder="Seleccione Lengua Materna"
+                  [ngModel]="idLenguaSelect"
+                  required
+                >
+                  <mat-option
+                    *ngFor="let item of personaEstudiante.tipoLenguaMaterna"
+                    [value]="item.ID_ENUMERADO"
+                  >
+                    {{item.VALOR_ENUMERADO}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="nameErrorLengua">{{ nameErrorLengua }}</mat-error>
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Tiene Discapacidad" formControlName="discapacidad" />
+              </mat-form-field>
+            </div>
+
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Email Personal" formControlName="email" />
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <input matInput placeholder="Nro Celular" formControlName="celular" />
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="33.33" fxFlex="100" class="p-10">
+              <mat-form-field>
+                <mat-select
+                  placeholder="Pais"
+                  [ngModel]="this.idPaisSelect"
+                  formControlName="pais"
+                  (selectionChange)="onSelecion($event)"
+                >
+                  <mat-option *ngFor="let item of personaEstudiante.paises" [value]="item.Codigo">
+                    {{item.Dscpais}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <!-- column -->
+            <div fxFlex.gt-sm="50" fxFlex="100" class="p-10" *ngIf="this.GetValor()">
+              <mat-form-field>
+                <input matInput placeholder="Ubicación Geográfica" formControlName="ubicacion" />
+                <button type="button" mat-icon-button matSuffix (click)="onGetUbigeo()">
+                  <mat-icon style="font-size: x-large !important">search</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <!-- column -->
+            <div fxFlex.gt-sm="50" fxFlex="100" class="p-10">
+              <!-- <mat-form-field>
+                <input matInput /> -->
+
+              <mat-form-field>
+                <input matInput placeholder="Dirección" formControlName="direccion" />
+
+                <!-- </mat-form-field> -->
+              </mat-form-field>
+            </div>
+            <div fxFlex.gt-sm="100" fxFlex="100" class="text-center">
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                class="m-r-5"
+                style="margin: 5px 40px 5px 30px; min-width: 220px"
+                [disabled]="!this.form.valid"
+              >
+                <mat-icon class="mat-18">save</mat-icon>
+                Actualizar Información
+              </button>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

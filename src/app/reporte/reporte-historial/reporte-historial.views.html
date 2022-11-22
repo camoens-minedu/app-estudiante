@@ -1,0 +1,24 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <div class="align-items-center">
+          <div fxFlex.gt-md="100" fxFlex.gt-lg="100" class="text-center">
+            <button mat-raised-button color="primary" (click)="this.getReporteHistorial()">
+              Mostrar Reporte
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content>
+        <app-report-ficha-matricula
+          [setPdf]="this.pdfSrc"
+          *ngIf="this.pdfSrc"
+        ></app-report-ficha-matricula>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

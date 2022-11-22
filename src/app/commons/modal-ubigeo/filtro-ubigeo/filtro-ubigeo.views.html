@@ -1,0 +1,25 @@
+<div fxLayout="row wrap">
+  <div fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit()" [formGroup]="myForm">
+          <div fxLayout="row wrap" class="align-items-center">
+            <div fxFlex.gt-md="70" fxFlex.gt-lg="50" fxFlex="100">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Buscar Ubigeo"
+                  formControlName="textoBusqueda"
+                  [required]="true"
+                />
+              </mat-form-field>
+            </div>
+            <div fxFlex.gt-md="30" class="text-right">
+              <button mat-raised-button color="primary" [disabled]="myForm.invalid">Buscar</button>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

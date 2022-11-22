@@ -1,0 +1,28 @@
+<!-- class="mat-typography" -->
+<h2 mat-dialog-title>Seleccionar ubigeo</h2>
+<mat-dialog-content>
+  <app-filtro-ubigeo (buscar)="onBuscarUbigeo($event)"></app-filtro-ubigeo>
+  <div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+      <mat-card>
+        <mat-card-content>
+          <app-grilla-ubigeo
+            (onGetCursoSeleccionado)="onSelectUbigeo($event)"
+            [setListCursoMatricula]="this.listUbigeo"
+          >
+          </app-grilla-ubigeo>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- <app-grilla-curso-programado
+    [setCursosProgramados]="this.vListMatriculaCurso"
+    (onGetCursoProgramadoDto)="onGetCursoProgramadosDto($event)"
+  ></app-grilla-curso-programado> -->
+</mat-dialog-content>
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="doAction()" color="warn" [disabled]="!this.EsActivo">Aceptar</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button>Cancelar</button>
+</div>

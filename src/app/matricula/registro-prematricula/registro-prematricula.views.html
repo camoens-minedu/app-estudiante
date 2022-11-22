@@ -1,0 +1,39 @@
+<div style="text-align: center !important">
+  <app-matricula-cabecera
+    [dataCabecera]="this.dataCabecera"
+    [setCount]="this?.cursosSeleccionados.length"
+    [setCredito]="this.getNroCreditosMatriculados"
+    *ngIf="this.dataCabecera"
+  ></app-matricula-cabecera>
+</div>
+
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <div class="align-items-center">
+          <div fxFlex.gt-md="100" fxFlex.gt-lg="100" class="text-center">
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="!getNroCursoMatriculados"
+              (click)="saveMatricula()"
+            >
+              Grabar Matricula
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+        <mat-card-title>Lista de cursos siguientes:</mat-card-title>
+        <app-grilla-prematricula
+          [setListCursoMatricula]="this?.dataListCursoMatricula"
+          (onGetCursoSeleccionado)="getCursoSeleccionado($event)"
+          (onDeleteCursoSeleccionado)="onDeleteCursoSeleccionado($event)"
+        ></app-grilla-prematricula>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<!-- <div class="pdf-container">
+  <pdf-viewer [src]="this.pdfSrc" [zoom]="1"></pdf-viewer>
+</div> -->
+
+<div class="container-table" style="height: 600px !important">
+  <ng2-pdfjs-viewer [pdfSrc]="this.pdfSrc" *ngIf="this.pdfSrc"></ng2-pdfjs-viewer>
+</div>
+<!-- [render-text]="true" -->

@@ -1,0 +1,34 @@
+<mat-card class="oh">
+  <mat-card-header class="bg-info text-white">
+    <mat-card-title
+      >Institucion Educativa: {{this?.institucion?.TipoInstitucionNombre}}
+      {{this?.institucion?.NombreInstitucion}}</mat-card-title
+    >
+    <mat-card-subtitle>Dirección: {{this?.institucion?.Direccion}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img
+    mat-card-image
+    src="assets/images/big/MINEDU.jpg"
+    style="min-height: 200px"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content>
+    <mat-card-subtitle>
+      Ubigeo: {{this?.institucion?.NombreDepartamento}} / {{this?.institucion?.NombreProvincia}} /
+      {{this?.institucion?.NombreDistrito}}</mat-card-subtitle
+    >
+
+    <mat-card-subtitle>
+      Pagina Web:
+      <a href="http://{{this?.institucion?.PaginaWeb}}" target="_blank" rel="noopener noreferrer"
+        >{{this?.institucion?.PaginaWeb}}</a
+      >
+    </mat-card-subtitle>
+
+    <!-- <mat-card-actions>
+      <button mat-raised-button color="accent">LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions> -->
+  </mat-card-content>
+</mat-card>
