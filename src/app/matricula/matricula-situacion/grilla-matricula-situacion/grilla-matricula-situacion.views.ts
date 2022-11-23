@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {
   GetListMatriculasDto,
   GetListMatriculasRegistradaDto,
+  GetMtatriculaConsolidadDto,
 } from 'src/app/models/matricula/matriculaDtos';
 
 @Component({
@@ -11,7 +12,7 @@ import {
   styles: [],
 })
 export class GrillaMatriculaSituacionViews {
-  listaMatriculaRegistrada!: MatTableDataSource<GetListMatriculasDto>;
+  listaMatriculaRegistrada!: MatTableDataSource<GetMtatriculaConsolidadDto>;
   displayedColumns: string[] = [
     'id',
     'codSemestre',
@@ -27,7 +28,7 @@ export class GrillaMatriculaSituacionViews {
   @Output() onGetFicha = new EventEmitter<number>();
 
   @Input()
-  set setListMatriculaRegistrado(value: GetListMatriculasDto[]) {
+  set setListMatriculaRegistrado(value: GetMtatriculaConsolidadDto[]) {
     this.listaMatriculaRegistrada = new MatTableDataSource(value);
   }
 

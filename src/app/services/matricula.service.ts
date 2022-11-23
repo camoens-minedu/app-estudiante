@@ -4,6 +4,7 @@ import {
   GetListMatriculasDto,
   GetListMatriculasRegistradaDto,
   GetMatriculaCursoDto,
+  GetMtatriculaConsolidadDto,
   GetPreMatriculaCabeceraListCursoDto,
   GetProgramacionCursoDto,
   ListCourcesNext,
@@ -46,9 +47,9 @@ export class MatriculaService extends GenericRepositoryService {
       `${this.urlAddress}${this.controller}/${idPlan}/${idSemestre}/${idPeriodoLectivo}`,
     );
   }
-  GetListMatriculasRegistradas(idEstudianteInstitucion: number) {
-    return this.get<GetListMatriculasDto[]>(
-      `${this.urlAddress}${this.controller}/${idEstudianteInstitucion}`,
+  GetListMatriculasRegistradas(idEstudianteInstitucion: number, idPeriodoLectivo: number) {
+    return this.get<GetMtatriculaConsolidadDto[]>(
+      `${this.urlAddress}${this.controller}/${idEstudianteInstitucion}/${idPeriodoLectivo}`,
     );
   }
   GetListMatriculaCurso(request: any): Observable<GetPreMatriculaCabeceraListCursoDto> {

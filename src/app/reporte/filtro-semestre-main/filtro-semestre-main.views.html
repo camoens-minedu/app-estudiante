@@ -13,7 +13,7 @@
                   *ngFor="let item of comboSemestre"
                   [value]="item?.ID_MATRICULA_ESTUDIANTE"
                 >
-                  {{item?.periodoAcademico?.NOMBRE_PERIODO_ACADEMICO}}
+                  {{item?.CODIGO_PERIODO_LECTIVO}}
                 </mat-option>
               </mat-select>
             </mat-form-field>

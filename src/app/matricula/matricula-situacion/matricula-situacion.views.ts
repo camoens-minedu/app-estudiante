@@ -3,7 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { finalize } from 'rxjs';
 import { LoadingViews } from 'src/app/libs/components/loading/loading.views';
 import { SessionService } from 'src/app/libs/services/session.service';
-import { GetListMatriculasDto, GetPdfDto } from 'src/app/models/matricula/matriculaDtos';
+import {
+  GetListMatriculasDto,
+  GetMtatriculaConsolidadDto,
+  GetPdfDto,
+} from 'src/app/models/matricula/matriculaDtos';
 import { MatriculaService } from 'src/app/services/matricula.service';
 import { ReporteService } from 'src/app/services/reporte.service';
 import { ModalFichaMatriculaViews } from './modal-ficha-matricula/modal-ficha-matricula.views';
@@ -20,7 +24,7 @@ export class MatriculaSituacionViews implements OnInit {
 
   strPdf!: GetPdfDto;
 
-  listMatriculaRegistrada: GetListMatriculasDto[] = [];
+  listMatriculaRegistrada: GetMtatriculaConsolidadDto[] = [];
 
   constructor(
     private _matriculaService: MatriculaService,
@@ -36,6 +40,7 @@ export class MatriculaSituacionViews implements OnInit {
     this._matriculaService
       .GetListMatriculasRegistradas(
         this._sesion.sesionPersonaEstudianteInstitucion.idEstudianteInstitucion,
+        this._sesion.objInstitucion.ID_PERIODOS_LECTIVOS_POR_INSTITUCION_main,
       )
       .pipe(finalize(() => loading.close()))
       .subscribe(

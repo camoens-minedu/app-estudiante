@@ -3,7 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { finalize } from 'rxjs';
 import { LoadingViews } from 'src/app/libs/components/loading/loading.views';
 import { SessionService } from 'src/app/libs/services/session.service';
-import { GetListMatriculasDto, GetPdfDto } from 'src/app/models/matricula/matriculaDtos';
+import {
+  GetListMatriculasDto,
+  GetMtatriculaConsolidadDto,
+  GetPdfDto,
+} from 'src/app/models/matricula/matriculaDtos';
 import { MatriculaService } from 'src/app/services/matricula.service';
 import { ReporteService } from 'src/app/services/reporte.service';
 import { DialogService } from 'src/app/shared/dialog/dialog.service';
@@ -17,7 +21,7 @@ export class BoletaNotasViews implements OnInit {
   strPdf!: GetPdfDto;
   pdfSrc: any;
 
-  comboSemestre!: GetListMatriculasDto[];
+  comboSemestre!: GetMtatriculaConsolidadDto[];
   constructor(
     private dialog: MatDialog,
     private _dialogService: DialogService,
@@ -54,7 +58,10 @@ export class BoletaNotasViews implements OnInit {
     const idEstudiante = this._sesion.sesionPersonaEstudianteInstitucion.idEstudianteInstitucion;
 
     this._matriculaService
-      .GetListMatriculasRegistradas(idEstudiante)
+      .GetListMatriculasRegistradas(
+        idEstudiante,
+        this._sesion.objInstitucion.ID_PERIODOS_LECTIVOS_POR_INSTITUCION_main,
+      )
       .pipe(finalize(() => loading.close()))
       .subscribe(
         (resp) => {
