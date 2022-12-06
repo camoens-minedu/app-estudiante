@@ -7,9 +7,7 @@
 
     <ng-container matColumnDef="codSemestre">
       <th mat-header-cell *matHeaderCellDef>Semestre</th>
-      <td mat-cell *matCellDef="let element">
-        {{ element?.periodoAcademico?.CODIGO_PERIODO_LECTIVO }}
-      </td>
+      <td mat-cell *matCellDef="let element">{{ element?.CODIGO_PERIODO_LECTIVO }}</td>
     </ng-container>
 
     <ng-container matColumnDef="fechaMatricula">

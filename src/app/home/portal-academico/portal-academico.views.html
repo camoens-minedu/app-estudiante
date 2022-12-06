@@ -23,11 +23,41 @@
       </mat-card>
     </div>
   </div>
-  <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+  <div fxFlex.gt-lg="75" fxFlex.gt-md="60" fxFlex.gt-xs="100" fxFlex="100">
     <app-home-institucion> </app-home-institucion>
+  </div>
+
+  <div fxFlex.gt-lg="25" fxFlex.gt-md="40" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-header class="bg-info text-white">
+        <mat-card-title> Soporte al Estudiante </mat-card-title>
+        <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="m-t-20">
+          <span class="text-muted"><i class="fa fa-envelope-o m-r-10"></i>Email: &nbsp;</span>
+          <span>{{ this?.institucion?.EmailSoporteEstudiante}}</span>
+        </div>
+        <div class="m-t-20">
+          <span class="text-muted"><i class="fa fa-phone m-r-10"></i>Telefono: &nbsp;</span>
+          <span>{{this?.institucion?.TelefonoSoporteEstudiante}}</span>
+        </div>
+        <div class="m-t-20">
+          <span class="text-muted"><i class="fa fa-mobile fa-2x m-r-10"></i>Celular: &nbsp;</span>
+          <span>{{this?.institucion?.CelularSoporteEstudiante}}</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 
+<!-- <i class="fas fa-mobile-android-alt "></i> -->
+<i class="fas fa-mobile-android-alt fa-xs fa-fw"></i>
 <!--
+
+      this.institucion.EmailSoporteEstudiante;
+    this.institucion.TelefonoSoporteEstudiante;
+    this.institucion.CelularSoporteEstudiante
     <div fxFlex.gt-lg="75" fxFlex.gt-md="60" fxFlex.gt-xs="100" fxFlex="100">
 -->

@@ -2,6 +2,8 @@ import { CursoDto } from './../../models/portal/cursoDto';
 import { PortalService } from './../../services/portal.service';
 import { Component, OnInit } from '@angular/core';
 import { OauthService } from 'src/app/authentication/services/oauth.service';
+import { SessionService } from 'src/app/libs/services/session.service';
+import { Institucion } from 'src/app/shared/menu-items/GetDtoUser';
 
 @Component({
   selector: 'app-portal-academico',
@@ -10,10 +12,15 @@ import { OauthService } from 'src/app/authentication/services/oauth.service';
 })
 export class PortalAcademicoViews implements OnInit {
   public isUserAuthenticated: boolean = false;
+  institucion!: Institucion;
 
   courseList: CursoDto[] = [];
 
-  constructor(private portalService: PortalService, private _authService: OauthService) {
+  constructor(
+    private portalService: PortalService,
+    private _authService: OauthService,
+    private _sesion: SessionService,
+  ) {
     this.courseList = portalService.getCourse();
   }
 
@@ -28,5 +35,10 @@ export class PortalAcademicoViews implements OnInit {
     //     this.isUserAuthenticated = res;
     //   });
     // }
+
+    this.institucion = this._sesion.objInstitucion.institucion;
+    this.institucion.EmailSoporteEstudiante;
+    this.institucion.TelefonoSoporteEstudiante;
+    this.institucion.CelularSoporteEstudiante;
   }
 }

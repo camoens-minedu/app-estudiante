@@ -85,6 +85,9 @@ export interface Institucion {
   Email: string;
   Telefono: string;
   Celular: string;
+  EmailSoporteEstudiante: string;
+  TelefonoSoporteEstudiante: string;
+  CelularSoporteEstudiante: string;
 }
 
 export interface InstitucionCarrereSelec {

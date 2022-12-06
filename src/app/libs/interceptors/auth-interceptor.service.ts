@@ -39,7 +39,8 @@ export class AuthInterceptorService implements HttpInterceptor {
                   const errores = HttpUtil.getServerErrorMessage(err);
                   this.dialogService.info({
                     message: errores.message,
-                    title: 'Información',
+                    validations: errores.validations,
+                    title: errores.title,
                     button: { text: 'Cerrar' },
                   });
                 }
