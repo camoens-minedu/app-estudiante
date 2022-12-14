@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-Prod": "ng build --watch --configuration=production --base-href /gestion-estudiante/app-estudiante/"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,156 @@
+.
+|-- README.md
+|-- angular.json
+|-- debug.log
+|-- e2e
+|   |-- protractor.conf.js
+|   |-- src
+|   |   |-- app.e2e-spec.ts
+|   |   `-- app.po.ts
+|   `-- tsconfig.json
+|-- karma.conf.js
+|-- output.doc
+|-- outputListStructure_appEstudiante.txt
+|-- package-lock.json
+|-- package.json
+|-- src
+|   |-- app
+|   |   |-- app.component.css
+|   |   |-- app.component.html
+|   |   |-- app.component.ts
+|   |   |-- app.module.ts
+|   |   |-- app.routing.ts
+|   |   |-- authentication
+|   |   |   |-- authentication.module.ts
+|   |   |   |-- authentication.routing.ts
+|   |   |   |-- change-password
+|   |   |   |-- confirm
+|   |   |   |-- constants.prod.ts
+|   |   |   |-- constants.ts
+|   |   |   |-- error
+|   |   |   |-- forgot
+|   |   |   |-- lockscreen
+|   |   |   |-- login
+|   |   |   |-- register
+|   |   |   |-- services
+|   |   |   |-- unauthorized
+|   |   |   `-- validar-iest
+|   |   |-- commons
+|   |   |   |-- commons.module.ts
+|   |   |   |-- modal-ubigeo
+|   |   |   `-- persona-form
+|   |   |-- demo-material-module.ts
+|   |   |-- estudiante
+|   |   |   |-- estudiante.module.ts
+|   |   |   |-- estudiante.routing.ts
+|   |   |   |-- informacion-general
+|   |   |   `-- perfil-estudiante
+|   |   |-- home
+|   |   |   |-- home-institucion
+|   |   |   |-- home-routing.module.ts
+|   |   |   |-- home.module.ts
+|   |   |   `-- portal-academico
+|   |   |-- layouts
+|   |   |   |-- blank
+|   |   |   `-- full
+|   |   |-- libs
+|   |   |   |-- components
+|   |   |   |-- enumerados
+|   |   |   |-- forms
+|   |   |   |-- guards
+|   |   |   |-- interceptors
+|   |   |   `-- services
+|   |   |-- matricula
+|   |   |   |-- matricula-ficha
+|   |   |   |-- matricula-routing.module.ts
+|   |   |   |-- matricula-situacion
+|   |   |   |-- matricula.module.ts
+|   |   |   `-- registro-prematricula
+|   |   |-- models
+|   |   |   |-- general
+|   |   |   |-- informacion-general
+|   |   |   |-- maestra
+|   |   |   |-- matricula
+|   |   |   |-- portal
+|   |   |   `-- seguridad
+|   |   |-- reporte
+|   |   |   |-- boleta-notas
+|   |   |   |-- filtro-semestre-main
+|   |   |   |-- reporte-historial
+|   |   |   |-- reporte-routing.module.ts
+|   |   |   `-- reporte.module.ts
+|   |   |-- services
+|   |   |   |-- enviroment-url.service.ts
+|   |   |   |-- generic-repository.service.ts
+|   |   |   |-- informacion-personal.service.ts
+|   |   |   |-- maestra.service.ts
+|   |   |   |-- matricula.service.ts
+|   |   |   |-- perfil-estudiante.service.ts
+|   |   |   |-- portal.service.ts
+|   |   |   |-- reporte.service.ts
+|   |   |   |-- usuario.service.ts
+|   |   |   `-- utlis-service.ts
+|   |   `-- shared
+|   |       |-- accordion
+|   |       |-- dialog
+|   |       |-- menu-items
+|   |       |-- shared.module.ts
+|   |       `-- spinner.component.ts
+|   |-- assets
+|   |   |-- company.json
+|   |   |-- i18n
+|   |   |   |-- de.json
+|   |   |   |-- en.json
+|   |   |   |-- es.json
+|   |   |   `-- fr.json
+|   |   |-- images
+|   |   |   |-- alert
+|   |   |   |-- background
+|   |   |   |-- big
+|   |   |   |-- browser
+|   |   |   |-- custom-select.png
+|   |   |   |-- document
+|   |   |   |-- favicon.png
+|   |   |   |-- gallery
+|   |   |   |-- icon
+|   |   |   |-- logo-icon.png
+|   |   |   |-- logo-light-icon.png
+|   |   |   |-- logo-light-text.png
+|   |   |   |-- logo-minedu.png
+|   |   |   |-- logo-text.png
+|   |   |   |-- tooltip
+|   |   |   `-- users
+|   |   |-- pdfjs
+|   |   |   |-- build
+|   |   |   `-- web
+|   |   `-- styles
+|   |       |-- app.scss
+|   |       |-- colors
+|   |       |-- dark-sidebar.scss
+|   |       |-- header.scss
+|   |       |-- horizontal.scss
+|   |       |-- icons
+|   |       |-- pages.scss
+|   |       |-- responsive.scss
+|   |       |-- rtl.scss
+|   |       |-- sidebar.scss
+|   |       |-- spinner.scss
+|   |       |-- style.scss
+|   |       |-- variable.scss
+|   |       `-- widgets.scss
+|   |-- environments
+|   |   |-- environment.prod.ts
+|   |   `-- environment.ts
+|   |-- favicon.ico
+|   |-- index.html
+|   |-- main.ts
+|   |-- polyfills.ts
+|   |-- styles.scss
+|   |-- test.ts
+|   `-- web.config
+|-- tsconfig.app.json
+|-- tsconfig.json
+|-- tsconfig.spec.json
+`-- tslint.json
+
+73 directories, 80 files

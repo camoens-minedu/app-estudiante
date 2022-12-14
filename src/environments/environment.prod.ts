@@ -5,8 +5,8 @@ export const environment = {
     personaEstudianteInstitucion: 'Security.KeyEis',
   },
   api: {
-    urlAddress: 'http://localhost:50501/gestion-estudiante/web-apis/api/',
-    urlAddressSeguridad: 'http://localhost:50501/gestion-estudiante/webapi-seguridad/api/',
+    urlAddress: 'http://localhost:5054/gestion-estudiante/web-apis/api/',
+    urlAddressSeguridad: 'http://localhost:5054/gestion-estudiante/webapi-seguridad/api/',
     controllers: {
       informacionPersonal: 'InformacionPersonal',
       seguridad: 'security',
